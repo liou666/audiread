@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "@liou666",
+    "plugin:astro/recommended"
+  ],
+  "rules": {
+    // "import/namespace": "off",
+    // "@typescript-eslint/no-use-before-define": "off",
+    "react/no-unknown-property": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.astro"
+      ],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [
+          ".astro"
+        ]
+      },
+      "rules": {
+        "astro/semi": ["error", "never"],
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-indent": "off",
+        "react/jsx-closing-tag-location": "off",
+        "react/jsx-max-props-per-line": "off",
+        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"]
+      }
+
+    }
+  ]
+}

@@ -1,8 +1,22 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
+import tailwind from '@astrojs/tailwind'
+import vercel from '@astrojs/vercel/serverless'
+import AstroPWA from '@vite-pwa/astro'
+import solidJs from '@astrojs/solid-js'
 
-import tailwind from "@astrojs/tailwind";
+import { pwa } from './src/config/pwa'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
-});
+  integrations: [
+    AstroPWA(pwa),
+    solidJs(),
+    tailwind(),
+  ],
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
+})
