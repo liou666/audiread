@@ -10,20 +10,10 @@ import Ribbon from '@/components/Ribbon'
 <Layout>
   <div class='flex flex-col gap-4 h-full'>
     <Header />
-    <main class='flex-1'>
+    <main class='flex-1 !md:mt-0 !mt-20 m-auto w-[1200px] md:p-4 md:max-w-[calc(100%-2rem)] max-w-[calc(100%-1rem)] p-0'>
       <Ribbon client:only />
     </main>
     <Footer />
   </div>
 </Layout>
 
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 1200px;
-    max-width: calc(100% - 2rem);
-    font-size: 20px;
-    line-height: 1.6;
-  }
-</style>

@@ -19,7 +19,7 @@ const SoundSynthetic = () => {
       {globalState().audioUrl
         ? (
           <div
-            class='border border-base h-full w-full p-16 resize-none rounded flex flex-col gap-8 items-center justify-center'
+            class='border border-base h-full w-full md:p-16 p-8 resize-none rounded flex flex-col gap-8 items-center justify-center'
           >
             {/* <div class='text-8xl'>🥳</div> */}
             <div class='text-3xl'><img src='/2.png' alt='' /></div>
@@ -39,7 +39,7 @@ const SoundSynthetic = () => {
         : <textarea
             value={globalState().preText}
             onInput={({ target: { value } }) => setGlobalState({ ...globalState(), preText: value })}
-            class='base-textarea text-lg h-full w-full p-4 resize-none rounded'
+            class='base-textarea text-lg h-full w-full p-4 resize-none rounded min-h-80'
             placeholder='输入要合成的文本'
           />
     }

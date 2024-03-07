@@ -6,7 +6,7 @@ const Ribbon = () => {
   return (
     <GlobalStateProvider>
       <TTSConfigProvider>
-        <div class='flex gap-4 h-full'>
+        <div class='flex gap-4 h-full md:flex-row flex-col'>
           <SoundSynthetic />
           <Setting />
         </div>

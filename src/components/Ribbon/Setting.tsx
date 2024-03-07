@@ -32,7 +32,7 @@ const Setting = () => {
   }, '')
 
   return (
-    <div class='w-96 border p-4 rounded border-base flex flex-col gap-4'>
+    <div class=' border p-4 rounded border-base flex flex-col gap-4 md:w-96 w-full'>
       <OptionItem title='语言'>
         <select
           onChange={({ target: { value } }) => {
