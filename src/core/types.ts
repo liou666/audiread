@@ -1,5 +1,10 @@
 import type { LangCode } from './config'
 
+export enum Gender {
+  Male = 'Male',
+  Female = 'Female'
+}
+
 export interface SpeakOptions {
   text: string
   lang?: LangCode
@@ -13,7 +18,7 @@ export interface SpeakOptions {
 
 export interface EdgeVoice {
   FriendlyName: string
-  Gender: string
+  Gender: Gender
   Locale: string
   ShortName: string
   Name: string

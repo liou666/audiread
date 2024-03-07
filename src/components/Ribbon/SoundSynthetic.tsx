@@ -21,7 +21,8 @@ const SoundSynthetic = () => {
           <div
             class='border border-base h-full w-full p-16 resize-none rounded flex flex-col gap-8 items-center justify-center'
           >
-            <div class='text-8xl'>🎉</div>
+            {/* <div class='text-8xl'>🥳</div> */}
+            <div class='text-3xl'><img src='/2.png' alt='' /></div>
             <h2>文本合成语音文件成功!</h2>
             <audio
               src={globalState().audioUrl}
@@ -38,7 +39,7 @@ const SoundSynthetic = () => {
         : <textarea
             value={globalState().preText}
             onInput={({ target: { value } }) => setGlobalState({ ...globalState(), preText: value })}
-            class='base-input text-lg h-full w-full p-4 resize-none rounded'
+            class='base-textarea text-lg h-full w-full p-4 resize-none rounded'
             placeholder='输入要合成的文本'
           />
     }

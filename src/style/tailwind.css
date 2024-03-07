@@ -43,5 +43,9 @@
   .base-input{
     @apply dark:placeholder-gray-400/30 focus:opacity-100 opacity-75 dark:bg-[#000]/5 border-base dark:text-gray-300 placeholder-gray-300 block box-border w-full rounded-md shadow-sm transition-all  focus:bg-[#fff]/60 dark:focus:bg-[#f3f3f3]/5 focus:shadow-md outline-none focus:ring-[#eceef0] dark:focus:ring-[#eceef0]/60 focus:ring-1 border   text-sm px-4 py-2
   }
+
+  .base-textarea{
+    @apply base-input dark:placeholder-gray-400/50 placeholder-gray-400 
+  }
 }
 

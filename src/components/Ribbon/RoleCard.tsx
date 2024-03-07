@@ -1,5 +1,6 @@
 import { type Component } from 'solid-js'
 import cx from 'classnames'
+import { Gender } from '@/core/types'
 import type { EdgeVoice } from '@/core/types'
 import { getLabelName } from '@/core/config'
 import { synthesis } from '@/core/index'
@@ -22,7 +23,7 @@ const RoleCard: Component<Props> = (props) => {
   return (
     <div onClick={() => props.onClick(props.roleInfo.ShortName)} class={cx('rounded border border-base px-3 py-2 text-sm', props.selected ? 'bg-active' : '')}>
       <div class='flex gap-3 items-center'>
-        <div class='rounded-full w-6 h-6 bg-gray-200' />
+        <div class={cx('rounded-full w-6 h-6', props.roleInfo.Gender === Gender.Female ? 'bg-pink-300' : 'bg-gray-300') } />
         <div class={cx(props.selected ? '' : 'opacity-75')}>{getLabelName(props.roleInfo.ShortName)}</div>
       </div>
       <button
