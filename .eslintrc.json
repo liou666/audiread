@@ -6,7 +6,8 @@
   "rules": {
     // "import/namespace": "off",
     // "@typescript-eslint/no-use-before-define": "off",
-    "react/no-unknown-property": "off"
+    "react/no-unknown-property": "off",
+    "react/jsx-no-constructed-context-values": "off"
   },
   "overrides": [
     {

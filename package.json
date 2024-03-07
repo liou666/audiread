@@ -22,7 +22,9 @@
   "devDependencies": {
     "@egoist/tailwindcss-icons": "^1.7.4",
     "@iconify-json/carbon": "^1.1.30",
+    "@iconify-json/eos-icons": "^1.1.10",
     "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/material-symbols": "^1.1.74",
     "@iconify-json/mdi": "^1.1.64",
     "@liou666/eslint-config": "^1.4.1",
     "@liou666/eslint-config-ts": "^1.4.1",
