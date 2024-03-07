@@ -2,22 +2,26 @@
 import Layout from '@/layouts/Layout.astro'
 
 import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
 
 import Ribbon from '@/components/Ribbon'
 ---
 
 <Layout>
-  <main>
+  <div class='flex flex-col gap-4 h-full'>
     <Header />
-    <Ribbon client:only />
-  </main>
+    <main class='flex-1'>
+      <Ribbon client:only />
+    </main>
+    <!-- <Footer /> -->
+  </div>
 </Layout>
 
 <style>
   main {
     margin: auto;
     padding: 1rem;
-    width: 800px;
+    width: 1200px;
     max-width: calc(100% - 2rem);
     font-size: 20px;
     line-height: 1.6;
