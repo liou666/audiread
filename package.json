@@ -1,7 +1,17 @@
 {
-  "name": "tested-tower",
+  "name": "audiread",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "author": "liou <https://github.com/liou666>",
+  "license": "MIT",
+  "homepage": "https://github.com/liou666/audiread#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liou666/audiread.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liou666/audiread/issues"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
