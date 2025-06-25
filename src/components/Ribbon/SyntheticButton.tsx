@@ -1,15 +1,17 @@
 import cx from 'classnames'
 import { useGlobalState, useTTSConfig } from '@/stores'
+import { useSimpleTranslation } from '@/stores/SimpleI18nProvider'
 
 import { synthesis } from '@/core/index'
 
 const SyntheticButton = () => {
   const [ttsConfig] = useTTSConfig()
   const [globalState, { setGlobalState }] = useGlobalState()
+  const t = useSimpleTranslation()
 
   async function startSynthetic() {
     if (!globalState().preText.trim())
-      return alert('请输入要合成的文本')
+      return alert(t('alerts.enterText'))
 
     setGlobalState({ ...globalState(), isSynthetic: true })
 
@@ -27,7 +29,7 @@ const SyntheticButton = () => {
     }
     catch (error) {
       setGlobalState({ ...globalState(), audioUrl: '', isSynthetic: false })
-      return alert('合成失败，请重试')
+      return alert(t('alerts.synthesisError'))
     }
   }
 
@@ -37,7 +39,7 @@ const SyntheticButton = () => {
       class={cx('btn-light gap-3 rounded-full', globalState().isSynthetic ? 'bg-active' : '')}
     >
       {globalState().isSynthetic ? <i class='i-eos-icons-loading icon-btn' /> : <i class='i-material-symbols-magic-button icon-btn' />}
-      {globalState().isSynthetic ? '合成中...' : '合成音频'}
+      {globalState().isSynthetic ? t('common.synthesizing') : t('common.synthesize')}
     </button>
   )
 }

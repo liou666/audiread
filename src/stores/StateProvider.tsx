@@ -5,6 +5,9 @@ export interface GlobalState {
   preText: string
   audioUrl: string
   isSynthetic: boolean
+  currentPreviewVoice: string | null
+  isPreviewLoading: boolean
+  currentPreviewStop: (() => void) | null
 }
 export type GlobalStateContextType = [
   Accessor<GlobalState>,
@@ -20,6 +23,9 @@ export const defaultData: GlobalState = {
   preText: '',
   audioUrl: '',
   isSynthetic: false,
+  currentPreviewVoice: null,
+  isPreviewLoading: false,
+  currentPreviewStop: null,
 }
 
 export const GlobalStateProvider: ParentComponent = (props) => {

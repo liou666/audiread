@@ -18,7 +18,7 @@ export const rateOptions = [{
   value: 0.9,
 },
 {
-  label: '1.0x（默认）',
+  label: '1.0x',
   value: 1.0,
 },
 {
@@ -81,7 +81,7 @@ export const volumeOptions = [{
   value: -5,
 },
 {
-  label: '+0%（默认）',
+  label: '+0%',
   value: 0,
 },
 {
@@ -120,7 +120,7 @@ export const patchOptions = [
     value: -5,
   },
   {
-    label: '+0%（默认）',
+    label: '+0%',
     value: 0,
   },
   {

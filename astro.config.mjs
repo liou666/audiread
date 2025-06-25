@@ -8,6 +8,13 @@ import { pwa } from './src/config/pwa'
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['zh', 'en'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   integrations: [
     AstroPWA(pwa),
     solidJs(),

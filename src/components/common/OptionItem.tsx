@@ -1,3 +1,4 @@
+import { useSimpleTranslation } from '@/stores/SimpleI18nProvider'
 import { type ParentComponent } from 'solid-js'
 import { Show } from 'solid-js'
 
@@ -10,6 +11,7 @@ export interface Props {
 
 const OptionItem: ParentComponent<Omit<Props, 'div'>> = (props) => {
   const { children, title, nested, description } = props
+  const t = useSimpleTranslation()
   return (
     <>
       <div class='flex gap-1 items-center'>
@@ -20,7 +22,7 @@ const OptionItem: ParentComponent<Omit<Props, 'div'>> = (props) => {
             style={{ 'margin-left': typeof nested === 'number' ? `${nested * 0.5 + 0.5}rem` : '0.25rem' }}
               />)
       }
-        <div class='text-sm opacity-75'>{title}</div>
+        <div class='text-sm opacity-75'>{t('common.' + title)}</div>
       </div>
       <>
         {children}
@@ -31,6 +33,7 @@ const OptionItem: ParentComponent<Omit<Props, 'div'>> = (props) => {
 
 const OptionItemContainer: ParentComponent<Props> = (props) => {
   const { div, ...rest } = props
+
   return (
     <Show
       when={div}

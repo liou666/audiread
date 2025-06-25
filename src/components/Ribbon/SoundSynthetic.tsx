@@ -1,9 +1,11 @@
 import { useGlobalState, useTTSConfig } from '@/stores'
+import { useSimpleTranslation } from '@/stores/SimpleI18nProvider'
 import { getLabelName } from '@/core/config'
 
 const SoundSynthetic = () => {
   const [globalState, { setGlobalState }] = useGlobalState()
   const [ttsConfig] = useTTSConfig()
+  const t = useSimpleTranslation()
 
   function download(url: string, name = 'audio.mp3') {
     const a = document.createElement('a')
@@ -23,7 +25,7 @@ const SoundSynthetic = () => {
           >
             {/* <div class='text-8xl'>🥳</div> */}
             <div class='text-3xl'><img src='/2.png' alt='' /></div>
-            <h2>文本合成语音文件成功!</h2>
+            <h2>{t('ui.successMessage')}</h2>
             <audio
               src={globalState().audioUrl}
               controls
@@ -31,8 +33,8 @@ const SoundSynthetic = () => {
               class='w-full'
             />
             <div class='flex gap-2'>
-              <button onClick={() => setGlobalState({ ...globalState(), audioUrl: '' })} class='btn rounded-full px-8'>返回</button>
-              <button onClick={() => { download(globalState().audioUrl, fileName()) }} class='btn rounded-full px-8'>下载音频</button>
+              <button onClick={() => setGlobalState({ ...globalState(), audioUrl: '' })} class='btn rounded-full px-8'>{t('common.back')}</button>
+              <button onClick={() => { download(globalState().audioUrl, fileName()) }} class='btn rounded-full px-8'>{t('common.download')}</button>
             </div>
           </div>
           )
@@ -40,7 +42,7 @@ const SoundSynthetic = () => {
             value={globalState().preText}
             onInput={({ target: { value } }) => setGlobalState({ ...globalState(), preText: value })}
             class='base-textarea text-lg h-full w-full p-4 resize-none rounded min-h-80'
-            placeholder='输入要合成的文本'
+            placeholder={t('ui.textPlaceholder')}
           />
     }
 
